@@ -180,6 +180,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Movie Ticket Pricing System";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDiscount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
