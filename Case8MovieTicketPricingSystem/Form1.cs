@@ -31,6 +31,24 @@ namespace Case8MovieTicketPricingSystem
             };
 
             listBoxMovies.DataSource = movies;
+            listBoxMovies.DisplayMember = "Name";
+        }
+
+        private void buttonCalculate_Click(object sender, EventArgs e)
+        {
+            if (listBoxMovies.SelectedIndex < 0) { return; }
+            else if (listBoxMovies.SelectedItem is MovieTicket selectedMovie)
+            {
+                if (checkBoxDiscount.Checked) 
+                {
+                    selectedMovie.Discount = numericUpDownDiscount.Value;
+                }
+
+                labelMovie.Text = $"Movie: {selectedMovie.MovieName}";
+                labelPrice.Text = $"Original Price: ${selectedMovie.TicketPrice.ToString()}";
+                labelDiscount.Text = $"Discount: {selectedMovie.Discount.ToString()}%";
+                labelFinalPrice.Text = $"FinaPrice: ${selectedMovie.DiscountedPrice.ToString()}";
+            }
         }
     }
 }

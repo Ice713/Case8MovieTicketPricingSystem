@@ -36,10 +36,10 @@
             this.numericUpDownDiscount = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelMovie = new System.Windows.Forms.Label();
+            this.labelPrice = new System.Windows.Forms.Label();
+            this.labelDiscount = new System.Windows.Forms.Label();
+            this.labelFinalPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDiscount)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,19 +68,21 @@
             this.checkBoxDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxDiscount.Location = new System.Drawing.Point(38, 199);
             this.checkBoxDiscount.Name = "checkBoxDiscount";
-            this.checkBoxDiscount.Size = new System.Drawing.Size(89, 17);
+            this.checkBoxDiscount.Size = new System.Drawing.Size(111, 17);
             this.checkBoxDiscount.TabIndex = 2;
-            this.checkBoxDiscount.Text = "checkBox1";
+            this.checkBoxDiscount.Text = "Apply Discount";
             this.checkBoxDiscount.UseVisualStyleBackColor = true;
             // 
             // buttonCalculate
             // 
+            this.buttonCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCalculate.Location = new System.Drawing.Point(38, 222);
             this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(75, 23);
+            this.buttonCalculate.Size = new System.Drawing.Size(132, 30);
             this.buttonCalculate.TabIndex = 3;
-            this.buttonCalculate.Text = "button1";
+            this.buttonCalculate.Text = "Calculate Ticket Price";
             this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // label2
             // 
@@ -103,10 +105,10 @@
             // 
             this.panel1.BackgroundImage = global::Case8MovieTicketPricingSystem.Properties.Resources.Ticket;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.labelFinalPrice);
+            this.panel1.Controls.Add(this.labelDiscount);
+            this.panel1.Controls.Add(this.labelPrice);
+            this.panel1.Controls.Add(this.labelMovie);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(466, 31);
             this.panel1.Name = "panel1";
@@ -124,46 +126,46 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Movie Ticket";
             // 
-            // label4
+            // labelMovie
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
-            this.label4.Location = new System.Drawing.Point(21, 86);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Movie: ";
+            this.labelMovie.AutoSize = true;
+            this.labelMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
+            this.labelMovie.Location = new System.Drawing.Point(21, 86);
+            this.labelMovie.Name = "labelMovie";
+            this.labelMovie.Size = new System.Drawing.Size(42, 13);
+            this.labelMovie.TabIndex = 7;
+            this.labelMovie.Text = "Movie: ";
             // 
-            // label5
+            // labelPrice
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
-            this.label5.Location = new System.Drawing.Point(20, 112);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Original Price:";
+            this.labelPrice.AutoSize = true;
+            this.labelPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
+            this.labelPrice.Location = new System.Drawing.Point(20, 112);
+            this.labelPrice.Name = "labelPrice";
+            this.labelPrice.Size = new System.Drawing.Size(72, 13);
+            this.labelPrice.TabIndex = 8;
+            this.labelPrice.Text = "Original Price:";
             // 
-            // label6
+            // labelDiscount
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
-            this.label6.Location = new System.Drawing.Point(21, 137);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Discount:";
+            this.labelDiscount.AutoSize = true;
+            this.labelDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
+            this.labelDiscount.Location = new System.Drawing.Point(21, 137);
+            this.labelDiscount.Name = "labelDiscount";
+            this.labelDiscount.Size = new System.Drawing.Size(52, 13);
+            this.labelDiscount.TabIndex = 9;
+            this.labelDiscount.Text = "Discount:";
             // 
-            // label7
+            // labelFinalPrice
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(21, 172);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Final Price:";
+            this.labelFinalPrice.AutoSize = true;
+            this.labelFinalPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(234)))), ((int)(((byte)(205)))));
+            this.labelFinalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFinalPrice.Location = new System.Drawing.Point(21, 172);
+            this.labelFinalPrice.Name = "labelFinalPrice";
+            this.labelFinalPrice.Size = new System.Drawing.Size(71, 13);
+            this.labelFinalPrice.TabIndex = 10;
+            this.labelFinalPrice.Text = "Final Price:";
             // 
             // Form1
             // 
@@ -198,10 +200,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDownDiscount;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelFinalPrice;
+        private System.Windows.Forms.Label labelDiscount;
+        private System.Windows.Forms.Label labelPrice;
+        private System.Windows.Forms.Label labelMovie;
         private System.Windows.Forms.Label label3;
     }
 }
