@@ -35,5 +35,7 @@ namespace Case8MovieTicketPricingSystem
             TicketPrice = ticketPrice;
             Discount = discount;  
         }
+
+        public override string ToString() { return MovieName; }
     }
 }
